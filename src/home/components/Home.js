@@ -15,7 +15,7 @@ export default class Home extends Component {
         return (
             <div>
                 <Flex wrap>
-                    <Box flex='1 1 auto' p={4}>
+                    <Box flex='1 1 auto' p={4} pt={[1, 4]}>
                         <Heading>Dylan Stein</Heading>
                         <SubHeading>Full stack means full stack</SubHeading>
                         <SubHeading>Django. React. AWS.</SubHeading>
@@ -28,7 +28,7 @@ export default class Home extends Component {
                         <Link href="https://www.github.com/djstein/">GitHub</Link>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <Link href="https://www.twitter.com.d_j_stein">Twitter</Link>
+                        <Link href="https://www.twitter.com/d_j_stein">Twitter</Link>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
                         <Link href="https://www.linkedin.com/in/dylanstein">LinkedIn</Link>
@@ -70,23 +70,23 @@ export default class Home extends Component {
 
                 <Flex wrap>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <BoldLink href="https://www.github.com/djstein/">BentoBox LLC</BoldLink>
+                        <BoldLink href="#">BentoBox LLC</BoldLink>
                         <Text>March 2017 - Present</Text>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <BoldLink href="https://www.twitter.com.d_j_stein">BoostOurTeam LLC</BoldLink>
+                        <BoldLink href="#">BoostOurTeam LLC</BoldLink>
                         <Text>Octoboer 2015 - March 2017</Text>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <BoldLink href="https://www.linkedin.com/in/dylanstein">OSCAR Labs</BoldLink>
+                        <BoldLink href="#">OSCAR Labs</BoldLink>
                         <Text>August 2014 - August 2016</Text>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <BoldLink href="https://www.github.com/djstein/">Sears Holding</BoldLink>
+                        <BoldLink href="#">Sears Holding</BoldLink>
                         <Text>May 2016 - August 2016</Text>
                     </Box>
                     <Box flex='1 1 auto' p={4} py={1}>
-                        <BoldLink href="https://www.twitter.com.d_j_stein">Principal Financial Group</BoldLink>
+                        <BoldLink href="#">Principal Financial Group</BoldLink>
                         <Text>May 2013 -August 2015</Text>
                     </Box>
                 </Flex>
