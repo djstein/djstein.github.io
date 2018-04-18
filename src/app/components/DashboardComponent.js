@@ -10,69 +10,10 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 export default class DashboardComponent extends React.Component {
     static props = {
-        posts: PropTypes.object.isRequired,
-        categories: PropTypes.object.isRequired,
         handleClick: PropTypes.func.isRequired
     }
-
-    renderCategorySelectors = () => {
-        const { categories } = this.props
-        if (categories.length > 0) {
-            return (
-                <Flex justify="space-between">
-                    <Link>All</Link>
-                    {categories.map(category => {
-                        return (
-                            <Link key={category.value}>
-                                {category.display_name}
-                            </Link>
-                        )
-                    })}
-                </Flex>
-            )
-        }
-    }
-
-    renderCategorySections = () => {
-        const { categories } = this.props
-        if (categories.length > 0) {
-            return categories.map(category => {
-                return this.renderPostLinks(category.value)
-            })
-        } else {
-            return (
-                <a href="http://medium.com/@djstein/">
-                    Posts coming soon. Please follow on Medium for updates.
-                </a>
-            )
-        }
-    }
-
-    renderPostLinks = value => {
-        const { postList } = this.props
-        if (postList.length > 0) {
-            return postList.map(post => {
-                if (post.category === value) {
-                    return (
-                        <Link
-                            onClick={() => {
-                                this.props.handleClick(post.slug)
-                            }}
-                            key={post.slug}
-                        >
-                            {post.title}
-                        </Link>
-                    )
-                }
-            })
-        }
-    }
-
     render() {
         return (
-            <React.Fragment>
-                {this.renderCategorySelectors()}
-                <ContentSection>{this.renderCategorySections()}</ContentSection>
                 <ContentSection>
                     <Flex justify="center">
                         <div>
@@ -85,7 +26,6 @@ export default class DashboardComponent extends React.Component {
                         </div>
                     </Flex>
                 </ContentSection>
-            </React.Fragment>
         )
     }
 }

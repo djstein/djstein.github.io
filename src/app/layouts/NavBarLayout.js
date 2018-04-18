@@ -13,27 +13,19 @@ class NavBarLayout extends React.Component {
     children: PropTypes.object.isRequired
   }
 
-  componentDidMount() {
-    this.props.dispatch(getUserAction(this.props.location.pathname))
-    if (this.props.postList.length === 0) {
-      this.props.dispatch(postListRequest())
-    }
-  }
-
   render() {
-    const { children, postList } = this.props
+    const { children,  } = this.props
     return (
       <GridContainer>
         <NavBarContainer />
         <NavBarDropdownContainer />
-        {postList.length > 0 && <MainContainer full>{children}</MainContainer>}
+        <MainContainer full>{children}</MainContainer>
       </GridContainer>
     )
   }
 }
 
 function mapStateToProps(state, ownProps) {
-  const postList = state.postList
-  return { postList }
+  return { }
 }
 export default connect(mapStateToProps)(NavBarLayout)

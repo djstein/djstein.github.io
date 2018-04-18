@@ -23,19 +23,13 @@ class NavBarComponent extends React.Component {
                         <FontAwesomeIcon icon={displayDropDown ? "chevron-up" : "chevron-down"} />
                     </Button>
                 ) : (
-                    <div>
+
                         <ButtonComponent
                             outline="true"
-                            color="green"
-                            text={'Sign Up'}
-                            url={'/signup'}
-                        />
-                        <ButtonComponent
                             color="green"
                             text={'Login'}
                             url={'/login'}
                         />
-                    </div>
                 )}
             </NavBar>
         )

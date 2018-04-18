@@ -1,4 +1,4 @@
-import { UPDATE_SIDEBAR, UPDATE_DROPDOWN } from '../actions'
+import { UPDATE_DROPDOWN } from '../actions'
 
 export default function global(
   state = {
