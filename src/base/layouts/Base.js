@@ -1,3 +1,3 @@
 import React from "react"
-
-export const Base = ({ children }) => <div>{children}</div>
+import { BaseGrid } from "./../../ui/BaseGrid"
+export const Base = ({ children }) => <BaseGrid>{children}</BaseGrid>
