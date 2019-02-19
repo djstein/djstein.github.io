@@ -1,0 +1,9 @@
+{
+  "name": "djstein.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website Y'all",
+  "main": "index.js",
+  "repository": "git@github.com:djstein/djstein.github.io.git",
+  "author": "Dylan Stein <djstein@ncsu.edu>",
+  "license": "MIT"
+}
