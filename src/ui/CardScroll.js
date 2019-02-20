@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const CardScroll = styled.div`
   display: flex;
-  padding: 0.5rem;
+  padding-left: 0.5rem;
 
   overflow-x: scroll;
   width: 100%;

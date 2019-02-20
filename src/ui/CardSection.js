@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Section = styled.section`
+export const CardSection = styled.section`
   align-items: center;
   border-color: #eee;
   display: flex;

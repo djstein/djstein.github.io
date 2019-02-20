@@ -3,13 +3,13 @@ import { Header } from "./../../ui/Header"
 import { Card } from "./../../ui/Card"
 import { CardScroll } from "./../../ui/CardScroll"
 import { Link } from "./../../ui/Link"
-import { Section } from "./../../ui/Section"
+import { CardSection } from "./../../ui/CardSection"
 import { Subtitle } from "./../../ui/Subtitle"
 
 export const HomePage = () => (
   <>
     <Header>Dylan Stein</Header>
-    <Section>
+    <CardSection>
       <Subtitle>Blog</Subtitle>
       <Link to="blog">See All</Link>
       <CardScroll>
@@ -20,14 +20,14 @@ export const HomePage = () => (
           <Subtitle>Blog</Subtitle>
         </Card>
       </CardScroll>
-    </Section>
-    <Section>
+    </CardSection>
+    <CardSection>
       <Subtitle>Photos</Subtitle>
       <Link to="photos">See All</Link>
-    </Section>
-    <Section>
+    </CardSection>
+    <CardSection>
       <Subtitle>Projects</Subtitle>
       <Link to="projects">See All</Link>
-    </Section>
+    </CardSection>
   </>
 )
