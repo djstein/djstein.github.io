@@ -1,55 +1,36 @@
 import React from 'react'
 import { Header } from './../../ui/Header'
-import { Card } from './../../ui/Card'
-import { CardScroll } from './../../ui/CardScroll'
+
 import { Link } from './../../ui/Link'
-import { CardSection } from '../../ui/CardSection'
 import { Subtitle } from './../../ui/Subtitle'
 import { LinkSection } from './../../ui/LinkSection'
 
-const blogEntries = [
-  {
-    title: 'Modern Django',
-    subtitle: 'A modern guide on backends',
-    publishDate: '2/15/2018',
-  },
-  {
-    title: 'Blog',
-    subtitle: 'A different blog post',
-    publishDate: '2/13/2018',
-  },
-]
+import { FeaturedBlogPosts } from './FeaturedBlogPosts'
+import { entries } from './../constants/entries'
 
-export const BlogPage = () => (
-  <>
-    <Header>Blog</Header>
-    <CardSection>
-      <Subtitle>Featured</Subtitle>
-      <CardScroll>
-        {blogEntries.map(blog => (
-          <Card>
-            <Subtitle>{blog.title}</Subtitle>
-          </Card>
+export const BlogPage = ({ history }) => {
+  return (
+    <>
+      <Header>Blog</Header>
+      <FeaturedBlogPosts history={history} subtitle="Featured" />
+      <LinkSection>
+        <Subtitle>All Blog Posts</Subtitle>
+        {Object.entries(entries).map(([key, value]) => (
+          <Link to={`/blog/${key}`} key={key}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              <h3 style={{ margin: '0' }}>{value.title}</h3>
+              <div>{value.publishDate}</div>
+            </div>
+            <p>{value.subtitle}</p>
+          </Link>
         ))}
-      </CardScroll>
-    </CardSection>
-    <LinkSection>
-      <Subtitle>All Blog Posts</Subtitle>
-      {blogEntries.map(blog => (
-        <Link to="/blog/value">
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            <h3 style={{ margin: '0' }}>{blog.title}</h3>
-            <div>{blog.publishDate}</div>
-          </div>
-          <p>{blog.subtitle}</p>
-        </Link>
-      ))}
-    </LinkSection>
-  </>
-)
+      </LinkSection>
+    </>
+  )
+}

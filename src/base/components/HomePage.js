@@ -1,26 +1,18 @@
-import React from "react"
-import { Header } from "./../../ui/Header"
-import { Card } from "./../../ui/Card"
-import { CardScroll } from "./../../ui/CardScroll"
-import { Link } from "./../../ui/Link"
-import { CardSection } from "./../../ui/CardSection"
-import { Subtitle } from "./../../ui/Subtitle"
+import React from 'react'
+import { Header } from './../../ui/Header'
+import { Link } from './../../ui/Link'
+import { CardSection } from './../../ui/CardSection'
+import { Subtitle } from './../../ui/Subtitle'
+import { FeaturedBlogPosts } from './../../blog/components/FeaturedBlogPosts'
 
-export const HomePage = () => (
+export const HomePage = ({ history }) => (
   <>
     <Header>Dylan Stein</Header>
-    <CardSection>
-      <Subtitle>Blog</Subtitle>
-      <Link to="blog">See All</Link>
-      <CardScroll>
-        <Card>
-          <Subtitle>Blog</Subtitle>
-        </Card>
-        <Card>
-          <Subtitle>Blog</Subtitle>
-        </Card>
-      </CardScroll>
-    </CardSection>
+    <FeaturedBlogPosts
+      history={history}
+      subtitle="Blog"
+      link={{ to: '/blog/', text: 'See All' }}
+    />
     <CardSection>
       <Subtitle>Photos</Subtitle>
       <Link to="photos">See All</Link>

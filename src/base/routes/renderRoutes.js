@@ -1,6 +1,6 @@
-import React from "react"
-import { Route } from "react-router"
-import { routes } from "./routes"
+import React from 'react'
+import { Route } from 'react-router'
+import { routes } from './routes'
 
 export const renderRoutes = () =>
   routes.map(({ Layout, Component, path }) => (
@@ -8,9 +8,9 @@ export const renderRoutes = () =>
       key={path}
       path={path}
       exact={true}
-      render={() => (
-        <Layout>
-          <Component />
+      render={props => (
+        <Layout {...props}>
+          <Component {...props} />
         </Layout>
       )}
     />
