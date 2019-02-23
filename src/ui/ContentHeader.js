@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const ContentHeader = styled.h2`
+export const ContentHeader = styled.div`
+  background-color: ${props => props.backgroundColor};
+  color: ${props => props.theme.title};
   margin-bottom: 0.5rem;
-  background-color: magenta;
-  height: 24rem;
   margin: 0;
 `

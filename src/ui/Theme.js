@@ -1,8 +1,11 @@
 // https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
 
 export const Theme = {
-  subtitle: '#333',
-  blogSubtitle: '#999',
   title: 'black',
-  link: '#007aff',
+  subtitle: 'black',
+  text: 'black',
+  link: 'magenta',
+  background: 'white',
+  blogSubtitle: '#999',
+  cardTitle: 'white',
 }

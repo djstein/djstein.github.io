@@ -4,6 +4,7 @@ import { Link } from './../../ui/Link'
 import { CardSection } from '../../ui/CardSection'
 import { Card } from './../../ui/Card'
 import { CardScroll } from './../../ui/CardScroll'
+import { CardTitle } from './../../ui/CardTitle'
 import { Subtitle } from './../../ui/Subtitle'
 import { entries } from './../constants/entries'
 
@@ -19,8 +20,12 @@ export const FeaturedBlogPosts = ({ history, subtitle, link }) => {
         {Object.entries(entries).map(
           ([key, value]) =>
             value.featured && (
-              <Card key={key} onClick={() => onBlogCardClick(key)}>
-                <Subtitle>{value.title}</Subtitle>
+              <Card
+                key={key}
+                onClick={() => onBlogCardClick(key)}
+                backgroundImage={value.backgroundImage}
+              >
+                <CardTitle>{value.title}</CardTitle>
               </Card>
             )
         )}

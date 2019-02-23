@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+
 import { Link } from './../../ui/Link'
 
 import marked from 'marked'
@@ -7,10 +10,10 @@ import { default as Highlight } from 'highlight.js'
 import { useBlogPost } from './../hooks/blogPosts'
 import { entries } from './../constants/entries'
 import { Header } from './../../ui/Header'
-import { ContentSubtitle } from './../../ui/ContentSubtitle'
 
 import { BlogPostContent } from './../../ui/BlogPostContent'
 import { ContentHeader } from './../../ui/ContentHeader'
+import { BlogPostFooter } from './../../ui/BlogPostFooter'
 
 const customMarked = marked.setOptions({
   renderer: new marked.Renderer(),
@@ -28,16 +31,14 @@ const customMarked = marked.setOptions({
 export const BlogPost = ({ match }) => {
   const fileName = match.params.fileName
   const blogPostText = useBlogPost(fileName)
-  const { subtitle, title } = entries[fileName]
+  const { subtitle, title, publishDate } = entries[fileName]
   return (
     <>
       <ContentHeader>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <ContentSubtitle>{subtitle}</ContentSubtitle>
-          <Link to="/blog/">X</Link>
-        </div>
-
-        <Header style={{ color: 'white' }}>{title}</Header>
+        <Link to="/blog/">Dylan Stein</Link>
+        <Header>{title}</Header>
+        <p>{subtitle}</p>
+        <p>Published: {publishDate}</p>
       </ContentHeader>
       {blogPostText && (
         <BlogPostContent
@@ -46,6 +47,7 @@ export const BlogPost = ({ match }) => {
           }}
         />
       )}
+      <BlogPostFooter>Dylan Stein</BlogPostFooter>
     </>
   )
 }

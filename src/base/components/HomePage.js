@@ -14,10 +14,6 @@ export const HomePage = ({ history }) => (
       link={{ to: '/blog/', text: 'See All' }}
     />
     <CardSection>
-      <Subtitle>Photos</Subtitle>
-      <Link to="photos">See All</Link>
-    </CardSection>
-    <CardSection>
       <Subtitle>Projects</Subtitle>
       <Link to="projects">See All</Link>
     </CardSection>
