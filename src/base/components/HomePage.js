@@ -1,13 +1,14 @@
 import React from 'react'
-import { Header } from './../../ui/Header'
+import { PageHeader } from './PageHeader'
+
 import { Link } from './../../ui/Link'
 import { CardSection } from './../../ui/CardSection'
 import { Subtitle } from './../../ui/Subtitle'
 import { FeaturedBlogPosts } from './../../blog/components/FeaturedBlogPosts'
 
-export const HomePage = ({ history }) => (
+export const HomePage = ({ match, history }) => (
   <>
-    <Header>Dylan Stein</Header>
+    <PageHeader match={match} />
     <FeaturedBlogPosts
       history={history}
       subtitle="Blog"

@@ -6,10 +6,14 @@ export const useBlogPost = fileName => {
     setBlogPostText(text)
   }
   useEffect(() => {
-    const filePath = require(`./../posts/${fileName}.md`)
-    fetch(filePath)
-      .then(response => response.text())
-      .then(text => handleGetBlogPostText(text))
+    try {
+      const filePath = require(`./../posts/${fileName}.md`)
+      fetch(filePath)
+        .then(response => response.text())
+        .then(text => handleGetBlogPostText(text))
+    } catch (error) {
+      setBlogPostText('Post not found :[')
+    }
   }, [blogPostText])
 
   return blogPostText

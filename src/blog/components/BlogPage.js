@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from './../../ui/Header'
 
 import { Link } from './../../ui/Link'
 import { Subtitle } from './../../ui/Subtitle'
@@ -9,26 +8,19 @@ import { Text } from './../../ui/Text'
 
 import { FeaturedBlogPosts } from './FeaturedBlogPosts'
 import { entries } from './../constants/entries'
+import { PageHeader } from './../../base/components/PageHeader'
 
-export const BlogPage = ({ history }) => {
+export const BlogPage = ({ match, history }) => {
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Header>Blog</Header>
-        <Link to={'/'}>Dylan Stein</Link>
-      </div>
+      <PageHeader match={match} />
+
       <FeaturedBlogPosts history={history} subtitle="Featured" />
       <LinkSection>
         <Subtitle>All Blog Posts</Subtitle>
         {Object.entries(entries).map(([key, value]) => (
           <BlogLink>
-            <Link to={`/blog/${key}`} key={key} fontSize={'2rem'}>
+            <Link to={`/blog/${key}`} key={key} fontSize={'1.25rem'}>
               {value.title}
             </Link>
             <Text>{value.subtitle}</Text>

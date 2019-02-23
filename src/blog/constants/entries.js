@@ -1,11 +1,5 @@
 export const entries = {
-  About: {
-    title: 'About',
-    subtitle: 'A modern guide on backends',
-    publishDate: '2/15/2018',
-    featured: true,
-  },
-  Cat: {
+  about: {
     title: 'About',
     subtitle: 'A modern guide on backends',
     publishDate: '2/15/2018',

@@ -4,23 +4,30 @@ import styled from 'styled-components'
 import { NavLink as RouterLink } from 'react-router-dom'
 
 const StyledLink = styled.a`
-  color: ${props => props.theme.link};
+  color: ${props => (props.color ? props.color : props.theme.link)};
   text-decoration: none;
   padding: 0;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 0;
   font-size: ${props => props.fontSize};
+  :hover {
+    text-decoration: underline;
+  }
 `
 
 const StyledRouterLink = styled(RouterLink)`
-  color: ${props => props.theme.link};
+  color: ${props => props.color || props.theme.link};
   margin-left: 1rem;
   margin-right: 1rem;
   text-decoration: none;
   padding: 0;
   margin-top: 0;
   font-size: ${props => props.fontSize};
+  font-weight: ${props => props.fontWeight || 'initial'}
+  :hover {
+    text-decoration: underline;
+  }
 `
 
 export const Link = ({ to, children, ...rest }) =>

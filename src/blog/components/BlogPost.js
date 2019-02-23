@@ -1,8 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-
-import { Link } from './../../ui/Link'
 
 import marked from 'marked'
 import { default as Highlight } from 'highlight.js'
@@ -10,10 +6,13 @@ import { default as Highlight } from 'highlight.js'
 import { useBlogPost } from './../hooks/blogPosts'
 import { entries } from './../constants/entries'
 import { Header } from './../../ui/Header'
-
+import { Subtitle } from './../../ui/Subtitle'
+import { Link } from './../../ui/Link'
+import { Text } from './../../ui/Text'
 import { BlogPostContent } from './../../ui/BlogPostContent'
 import { ContentHeader } from './../../ui/ContentHeader'
 import { BlogPostFooter } from './../../ui/BlogPostFooter'
+import { PageHeader } from '../../base/components/PageHeader'
 
 const customMarked = marked.setOptions({
   renderer: new marked.Renderer(),
@@ -28,26 +27,46 @@ const customMarked = marked.setOptions({
   xhtml: false,
 })
 
-export const BlogPost = ({ match }) => {
+export const BlogPost = ({ location, match }) => {
   const fileName = match.params.fileName
   const blogPostText = useBlogPost(fileName)
   const { subtitle, title, publishDate } = entries[fileName]
+    ? entries[fileName]
+    : {}
   return (
     <>
-      <ContentHeader>
-        <Link to="/blog/">Dylan Stein</Link>
-        <Header>{title}</Header>
-        <p>{subtitle}</p>
-        <p>Published: {publishDate}</p>
-      </ContentHeader>
-      {blogPostText && (
-        <BlogPostContent
-          dangerouslySetInnerHTML={{
-            __html: customMarked(blogPostText),
-          }}
-        />
+      <PageHeader match={match} />
+      {subtitle && title && publishDate && blogPostText ? (
+        <>
+          <ContentHeader>
+            <Header>{title}</Header>
+          </ContentHeader>
+          <Text>{subtitle}</Text>
+          <Text>Published: {publishDate}</Text>
+          <BlogPostContent
+            dangerouslySetInnerHTML={{
+              __html: customMarked(blogPostText),
+            }}
+          />
+          <Link
+            to={`https://github.com/djstein/djstein.github.io/blob/master/src/blog/posts/${fileName}.md`}
+          >
+            Edit on GitHub
+          </Link>
+          <Link
+            to={`https://mobile.twitter.com/search?q=${encodeURIComponent(
+              `https://djstein.github.io/blog/${fileName}`
+            )}`}
+          >
+            Discuss on Twitter
+          </Link>
+        </>
+      ) : (
+        <Header>Post not found</Header>
       )}
-      <BlogPostFooter>Dylan Stein</BlogPostFooter>
+      <BlogPostFooter>
+        <Subtitle>Dylan Stein</Subtitle>
+      </BlogPostFooter>
     </>
   )
 }
