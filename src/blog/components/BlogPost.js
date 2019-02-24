@@ -49,7 +49,7 @@ export const BlogPost = ({ location, match }) => {
             }}
           />
           <Link
-            to={`https://github.com/djstein/djstein.github.io/blob/master/src/blog/posts/${fileName}.md`}
+            to={`https://github.com/djstein/djstein.github.io/blob/src/src/blog/posts/${fileName}.md`}
           >
             Edit on GitHub
           </Link>
