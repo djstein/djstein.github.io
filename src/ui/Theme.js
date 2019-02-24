@@ -4,7 +4,7 @@ export const Theme = {
   title: 'black',
   subtitle: 'black',
   text: 'black',
-  link: 'magenta',
+  link: 'rgb(255, 144, 203)',
   background: 'white',
   blogSubtitle: '#999',
   cardTitle: 'white',

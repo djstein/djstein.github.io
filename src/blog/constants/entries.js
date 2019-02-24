@@ -1,7 +1,7 @@
 export const entries = {
-  about: {
-    title: 'About',
-    subtitle: 'A modern guide on backends',
+  'new-website': {
+    title: 'New Website',
+    subtitle: 'The new website',
     publishDate: '2/15/2018',
     featured: true,
   },

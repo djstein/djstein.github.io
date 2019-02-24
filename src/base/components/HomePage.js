@@ -1,8 +1,8 @@
 import React from 'react'
 import { PageHeader } from './PageHeader'
 
-import { Link } from './../../ui/Link'
-import { CardSection } from './../../ui/CardSection'
+import { Text } from './../../ui/Text'
+// import { CardSection } from './../../ui/CardSection'
 import { Subtitle } from './../../ui/Subtitle'
 import { FeaturedBlogPosts } from './../../blog/components/FeaturedBlogPosts'
 
@@ -14,9 +14,17 @@ export const HomePage = ({ match, history }) => (
       subtitle="Blog"
       link={{ to: '/blog/', text: 'See All' }}
     />
-    <CardSection>
-      <Subtitle>Projects</Subtitle>
-      <Link to="projects">See All</Link>
+    {/* <CardSection>
+      <Subtitle>Talks</Subtitle>
+      <Text>Coming Soon</Text>
     </CardSection>
+    <CardSection>
+      <Subtitle>Photos</Subtitle>
+      <Text>Coming Soon</Text>
+    </CardSection> */}
+    <div>
+      <Subtitle>About</Subtitle>
+      <Text>Dylan Stein is a software engineer @ Apple, Inc.</Text>
+    </div>
   </>
 )
