@@ -1,16 +1,16 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Footer = styled.div`
-  margin-bottom: 5rem;
-  margin-top: 2rem;
-
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   div {
     display: flex;
     flex-direction: column;
+    margin-right: 1rem;
     a {
-      margin-left: 1rem;
-      margin-right: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
       margin-top: 1rem;
     }
   }

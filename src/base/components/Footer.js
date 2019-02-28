@@ -7,6 +7,7 @@ export const Footer = () => (
     <div>
       <Link to="/">Home</Link>
       <Link to="/blog/">Blog</Link>
+      {/* <Link to="/work/">Work</Link> */}
     </div>
     <div>
       <Link to="https://github.com/djstein">GitHub</Link>

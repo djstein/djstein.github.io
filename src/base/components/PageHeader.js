@@ -10,19 +10,14 @@ export const PageHeader = ({ match, history }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: '2rem',
-        paddingBottom: '.5rem',
+        paddingBottom: '2rem',
       }}
     >
       <Link to={'/'} fontSize={'1.5rem'} color={'black'} fontWeight={'500'}>
         Dylan Stein
       </Link>
       {match.path !== '/' && (
-        <Link
-          to={`/${basePath}/`}
-          fontSize={'1.5rem'}
-          color={'black'}
-          fontWeight={'500'}
-        >
+        <Link to={`/${basePath}/`} fontSize={'1.5rem'} fontWeight={'500'}>
           {basePath[0].toUpperCase() + basePath.slice(1)}
         </Link>
       )}

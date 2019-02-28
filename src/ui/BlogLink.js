@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const BlogLink = styled.div`
-  div:first-child {
-    display: flex;
-    justify-content: space-between;
-    alignitems: center;
-  }
   padding-bottom: 1rem;
+  padding-top: 1rem;
+  a {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  p {
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
 `

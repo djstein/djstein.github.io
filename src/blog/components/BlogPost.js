@@ -6,13 +6,11 @@ import { default as Highlight } from 'highlight.js'
 import { useBlogPost } from './../hooks/blogPosts'
 import { entries } from './../constants/entries'
 import { Header } from './../../ui/Header'
-import { Subtitle } from './../../ui/Subtitle'
 import { Link } from './../../ui/Link'
-import { Text } from './../../ui/Text'
 import { BlogPostContent } from './../../ui/BlogPostContent'
-import { ContentHeader } from './../../ui/ContentHeader'
-import { BlogPostFooter } from './../../ui/BlogPostFooter'
+import { BlogLink } from './../../ui/BlogLink'
 import { PageHeader } from '../../base/components/PageHeader'
+import { ContentFooter } from '../../base/components/ContentFooter'
 
 const customMarked = marked.setOptions({
   renderer: new marked.Renderer(),
@@ -29,44 +27,54 @@ const customMarked = marked.setOptions({
 
 export const BlogPost = ({ location, match }) => {
   const fileName = match.params.fileName
-  const blogPostText = useBlogPost(fileName)
+  const [blogPostText, fetched] = useBlogPost(fileName)
   const { subtitle, title, publishDate } = entries[fileName]
     ? entries[fileName]
     : {}
+
   return (
     <>
       <PageHeader match={match} />
-      {subtitle && title && publishDate && blogPostText ? (
+      {subtitle && title && publishDate ? (
         <>
-          <ContentHeader>
-            <Header>{title}</Header>
-          </ContentHeader>
-          <Text>{subtitle}</Text>
-          <Text>Published: {publishDate}</Text>
-          <BlogPostContent
-            dangerouslySetInnerHTML={{
-              __html: customMarked(blogPostText),
-            }}
-          />
-          <Link
-            to={`https://github.com/djstein/djstein.github.io/blob/src/src/blog/posts/${fileName}.md`}
+          <BlogLink>
+            <Link to={`/blog/${fileName}`}>{title}</Link>
+          </BlogLink>
+          {blogPostText ? (
+            <BlogPostContent
+              dangerouslySetInnerHTML={{
+                __html: customMarked(blogPostText),
+              }}
+            />
+          ) : (
+            <div style={{ height: '100vh' }} />
+          )}
+          <div
+            style={{ display: 'flex', flexWrap: 'wrap', paddingTop: '2rem' }}
           >
-            Edit on GitHub
-          </Link>
-          <Link
-            to={`https://mobile.twitter.com/search?q=${encodeURIComponent(
-              `https://djstein.github.io/blog/${fileName}`
-            )}`}
-          >
-            Discuss on Twitter
-          </Link>
+            <Link
+              style={{ paddingRight: '1rem', fontWeight: 'bold' }}
+              to={`https://github.com/djstein/djstein.github.io/blob/src/src/blog/posts/${fileName}.md`}
+            >
+              Edit on GitHub
+            </Link>
+            <Link
+              fontWeight={'500'}
+              style={{ paddingRight: '1rem', fontWeight: 'bold' }}
+              to={`https://mobile.twitter.com/search?q=${encodeURIComponent(
+                `https://djstein.github.io/blog/${fileName}`
+              )}`}
+            >
+              Discuss on Twitter
+            </Link>
+          </div>
         </>
-      ) : (
+      ) : fetched === false ? (
         <Header>Post not found</Header>
+      ) : (
+        <div style={{ height: '100vh' }} />
       )}
-      <BlogPostFooter>
-        <Subtitle>Dylan Stein</Subtitle>
-      </BlogPostFooter>
+      {fetched !== null && <ContentFooter />}
     </>
   )
 }

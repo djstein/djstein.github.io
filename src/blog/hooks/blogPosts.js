@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
 
 export const useBlogPost = fileName => {
+  const [fetched, setFetched] = useState(null)
   const [blogPostText, setBlogPostText] = useState(null)
+
   const handleGetBlogPostText = text => {
     setBlogPostText(text)
+    setFetched(true)
   }
+
   useEffect(() => {
     try {
       const filePath = require(`./../posts/${fileName}.md`)
@@ -12,9 +16,9 @@ export const useBlogPost = fileName => {
         .then(response => response.text())
         .then(text => handleGetBlogPostText(text))
     } catch (error) {
-      setBlogPostText('Post not found :[')
+      setFetched(false)
     }
   }, [blogPostText])
 
-  return blogPostText
+  return [blogPostText, fetched]
 }
