@@ -23,11 +23,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && cp build/index.html build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint:css": "stylelint './src/**/*.js'",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
