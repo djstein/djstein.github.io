@@ -23,7 +23,7 @@ const StyledRouterLink = styled(RouterLink)`
 
 export const Link = ({ to, children, ...rest }) =>
   to.startsWith('https://') || to.startsWith('mailto:') ? (
-    <StyledLink href={to} {...rest}>
+    <StyledLink href={to} {...rest} target="_blank" rel="noopener noreferrer">
       {children}
     </StyledLink>
   ) : (

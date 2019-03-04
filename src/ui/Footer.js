@@ -4,6 +4,7 @@ export const Footer = styled.div`
   padding-top: 2rem;
   padding-bottom: 2rem;
   display: flex;
+  justify-content: space-between;
   div {
     display: flex;
     flex-direction: column;

@@ -7,39 +7,46 @@ import { PageHeader } from './../../base/components/PageHeader'
 
 const entries = [
   {
-    company: 'Principal Financial Group',
-    start: '',
-    end: '',
-    website: 'https://www.principal.com/',
-    summary: 'Java Software Development Intern',
+    company: 'Apple',
+    start: 'Nov 2018',
+    end: 'Present',
+    website: 'https://www.apple.com',
+    summary: 'Fullstack Web Developer',
   },
   {
     company: 'BentoBox',
-    start: '',
-    end: '',
-    website: '',
-    summary: '',
+    start: 'Mar 2017',
+    end: 'Nov 2018',
+    website: 'https://www.getbento.com',
+    summary: 'Fullstack Engineer',
   },
   {
-    company: 'Sears Holdings LLC',
-    start: '',
-    end: '',
-    website: '',
-    summary: '',
-  },
-  {
-    company: 'NCSU ITNG - OSCAR Labs',
-    start: '',
-    end: '',
-    website: '',
-    summary: '',
+    company: 'NCSU - OSCAR Labs',
+    start: 'Aug 2014',
+    end: 'Dec 2016',
+    website: 'https://www.ncsu.edu',
+    summary: 'Software Developer',
   },
   {
     company: 'BoostOurTeam',
-    start: '',
-    end: '',
-    website: '',
-    summary: '',
+    start: 'Oct 2015',
+    end: 'Jan 2017',
+    website: '#',
+    summary: 'CTO',
+  },
+  {
+    company: 'Sears Holdings',
+    start: 'May 2016',
+    end: 'Jul 2016',
+    website: 'https://searsholdings.com',
+    summary: 'Software Development Intern',
+  },
+  {
+    company: 'Principal Financial Group',
+    start: 'May 2013',
+    end: 'Aug 2015',
+    website: 'https://www.principal.com/',
+    summary: 'RIS Java Development Intern',
   },
 ]
 
@@ -48,11 +55,19 @@ export const WorkPage = ({ match }) => {
     <>
       <PageHeader match={match} />
       <LinkSection>
-        {Object.entries(entries).map(([key, { website, company, summary }]) => (
-          <Link to={website} key={key}>
-            {company}
-          </Link>
-        ))}
+        {Object.entries(entries).map(
+          ([key, { website, company, summary, start, end }]) => (
+            <Link to={website} key={key}>
+              <Text style={{ fontSize: '1.25rem', fontWeight: '600' }}>
+                {company}
+              </Text>
+              <Text>{summary}</Text>
+              <Text>
+                {start} - {end}
+              </Text>
+            </Link>
+          )
+        )}
       </LinkSection>
     </>
   )

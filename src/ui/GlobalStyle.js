@@ -6,6 +6,7 @@ body {
   padding: 0;
   font-family:  sans-serif;
   font-smooth: auto;
+  letter-spacing: .125rem;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
