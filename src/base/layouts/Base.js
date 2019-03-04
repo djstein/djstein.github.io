@@ -5,7 +5,7 @@ import { BaseGrid } from './../../ui/BaseGrid'
 export const Base = ({ children }) => {
   return (
     <BaseGrid>
-      {children}
+      <div style={{ minHeight: '15rem' }}>{children}</div>
       <Footer />
     </BaseGrid>
   )

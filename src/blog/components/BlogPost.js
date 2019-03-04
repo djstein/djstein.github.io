@@ -37,7 +37,7 @@ export const BlogPost = ({ location, match }) => {
       <PageHeader match={match} />
       {subtitle && title && publishDate ? (
         <>
-          <BlogLink>
+          <BlogLink style={{ paddingTop: '2rem' }}>
             <Link to={`/blog/${fileName}`}>{title}</Link>
           </BlogLink>
           {blogPostText ? (
