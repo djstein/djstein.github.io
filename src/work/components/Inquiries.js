@@ -21,7 +21,6 @@ export const Inquiries = () => {
   }
 
   const handleFormSubmit = () => {
-    console.log(inquiryForm)
     const inquiryFormBody = `
 Inquiry Form - dylanstein.dev%0D%0A${inquiryFormFields
       .map(
@@ -30,8 +29,7 @@ Inquiry Form - dylanstein.dev%0D%0A${inquiryFormFields
           `${field.label}: ${inquiryForm[field.name]}`
       )
       .join('%0D%0A')}`
-    console.log(inquiryFormBody)
-    alert(inquiryFormBody)
+
     window.open(
       `mailto:djstein@ncsu.edu?subject=Inquiry Request - ${inquiryForm.company ||
         inquiryForm.name}&body=${inquiryFormBody}`
