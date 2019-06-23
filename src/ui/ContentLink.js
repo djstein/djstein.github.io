@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BlogLink = styled.div`
+export const ContentLink = styled.div`
   padding-bottom: 1rem;
   padding-top: 1rem;
   a {

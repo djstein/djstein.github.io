@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BlogPostFooter = styled.div`
+export const ContentFooter = styled.div`
   display: flex;
   color: ${props => props.theme.text};
   flex-direction: column;

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BlogPostContent = styled.div`
+export const MarkdownFileContent = styled.div`
   color: ${props => props.theme.text};
   padding-top: 0.5rem;
   padding-left: 0;

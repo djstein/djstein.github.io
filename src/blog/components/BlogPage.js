@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from './../../ui/Link'
 
 import { LinkSection } from './../../ui/LinkSection'
-import { BlogLink } from './../../ui/BlogLink'
+import { ContentLink } from '../../ui/ContentLink'
 import { Text } from './../../ui/Text'
 
 import { entries } from './../constants/entries'
@@ -15,12 +15,12 @@ export const BlogPage = ({ match }) => {
       <PageHeader match={match} />
       <LinkSection>
         {Object.entries(entries).map(([key, value]) => (
-          <BlogLink key={key}>
+          <ContentLink key={key}>
             <Link to={`/blog/${key}`}>
               {value.title}
               <Text>{value.publishDate}</Text>
             </Link>
-          </BlogLink>
+          </ContentLink>
         ))}
       </LinkSection>
     </>

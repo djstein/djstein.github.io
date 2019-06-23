@@ -9,6 +9,7 @@ import { Header } from './../../ui/Header'
 import { Link } from './../../ui/Link'
 import { MarkdownFileContent } from './../../ui/MarkdownFileContent'
 import { ContentLink } from './../../ui/ContentLink'
+import { Text } from './../../ui/Text'
 import { PageHeader } from '../../base/components/PageHeader'
 import { ContentFooter } from '../../base/components/ContentFooter'
 
@@ -25,10 +26,10 @@ const customMarked = marked.setOptions({
   xhtml: false,
 })
 
-export const BlogPost = ({ location, match }) => {
+export const EventsPost = ({ location, match }) => {
   const fileName = match.params.fileName
-  const [markdownText, fetched] = useMarkdownFile(fileName, 'blog')
-  const { subtitle, title, publishDate } = entries[fileName]
+  const [markdownText, fetched] = useMarkdownFile(fileName, 'events')
+  const { subtitle, title, publishDate, group, where } = entries[fileName]
     ? entries[fileName]
     : {}
 
@@ -38,7 +39,11 @@ export const BlogPost = ({ location, match }) => {
       {subtitle && title && publishDate ? (
         <>
           <ContentLink style={{ paddingTop: '2rem' }}>
-            <Link to={`/blog/${fileName}`}>{title}</Link>
+            <Link to={`/events/${fileName}`}>{title}</Link>
+            <Text>
+              {group} | {where}
+            </Text>
+            <Text>{publishDate}</Text>
           </ContentLink>
           {markdownText ? (
             <MarkdownFileContent
