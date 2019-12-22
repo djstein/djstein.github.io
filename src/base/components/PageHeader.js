@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from './../../ui/Link'
+import { Button } from './../../ui/Button'
+import { ThemeContext } from '../context/ThemeContext'
 
 export const PageHeader = ({ match, history }) => {
+  const { theme, switchTheme } = useContext(ThemeContext)
   const basePath = match.path.split('/')[1]
+
   return (
     <div
       style={{
@@ -21,6 +25,9 @@ export const PageHeader = ({ match, history }) => {
           {basePath[0].toUpperCase() + basePath.slice(1)}
         </Link>
       )}
+      <>
+        <Button onClick={() => switchTheme()}>{theme.theme}</Button>
+      </>
     </div>
   )
 }
