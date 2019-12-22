@@ -1,9 +1,9 @@
-import { HomePage } from "./../components/HomePage"
-import { Base } from "./../layouts/Base"
+import { HomePage } from './../components/HomePage'
+import { Base } from './../layouts/Base'
 
 export const BASE_ROUTES = [
   {
-    path: "/",
+    path: '/',
     Component: HomePage,
     Layout: Base,
   },

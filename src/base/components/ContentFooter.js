@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text } from './../../ui/Text'
-// import { Link } from './../../ui/Link'
 
 const year = new Date().getFullYear()
 

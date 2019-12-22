@@ -8,16 +8,20 @@ export const useMarkdownFile = (fileName, dir) => {
     setFetched(true)
   }
 
-  useEffect(() => {
-    try {
-      const filePath = require(`./../../${dir}/posts/${fileName}.md`)
-      fetch(filePath)
-        .then(response => response.text())
-        .then(text => handleGetMarkdownFile(text))
-    } catch (error) {
-      setFetched(false)
-    }
-  }, [markdownFileText])
+  useEffect(
+    () => {
+      try {
+        const filePath = require(`./../../${dir}/posts/${fileName}.md`)
+        fetch(filePath)
+          .then(response => response.text())
+          .then(text => handleGetMarkdownFile(text))
+      } catch (error) {
+        setFetched(false)
+      }
+    },
+    // eslint-disable-next-line
+    [markdownFileText]
+  )
 
   return [markdownFileText, fetched]
 }
