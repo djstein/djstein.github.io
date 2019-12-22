@@ -7,20 +7,22 @@ import { Theme } from './../../ui/Theme'
 import { DarkTheme } from './../../ui/DarkTheme'
 
 let inUseTheme = Theme
-window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   inUseTheme = DarkTheme
-})
+}
 
-const App = () => (
-  <>
-    <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
-    <GlobalStyle />
-    <ThemeProvider theme={inUseTheme}>
-      <BrowserRouter>
-        <Switch>{renderRoutes()}</Switch>
-      </BrowserRouter>
-    </ThemeProvider>
-  </>
-)
+function App() {
+  return (
+    <>
+      <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
+      <GlobalStyle theme={inUseTheme} />
+      <ThemeProvider theme={inUseTheme}>
+        <BrowserRouter>
+          <Switch>{renderRoutes()}</Switch>
+        </BrowserRouter>
+      </ThemeProvider>
+    </>
+  )
+}
 
 export default App

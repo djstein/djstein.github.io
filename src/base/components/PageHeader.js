@@ -13,7 +13,7 @@ export const PageHeader = ({ match, history }) => {
         paddingBottom: '2rem',
       }}
     >
-      <Link to={'/'} fontSize={'1.5rem'} color={'black'} fontWeight={'500'}>
+      <Link to={'/'} fontSize={'1.5rem'} fontWeight={'500'}>
         Dylan Stein
       </Link>
       {match.path !== '/' && (
