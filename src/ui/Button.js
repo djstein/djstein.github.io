@@ -13,12 +13,12 @@ export const Button = styled.button`
   margin-right: 0;
 
   border-radius: 0;
-  border-color: black;
+  border-color: ${props => props.theme.button.border};
   border-style: solid;
   border-width: 1px;
 
-  background-color: black;
-  color: white;
+  background-color: ${props => props.theme.button.backgroundColor};
+  color: ${props => props.theme.button.color};
 
   :hover {
     border-color: #666;

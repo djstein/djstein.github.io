@@ -10,4 +10,9 @@ export const DarkTheme = {
     color: 'white',
     border: 'white',
   },
+  button: {
+    backgroundColor: 'black',
+    color: 'white',
+    border: 'white',
+  },
 }

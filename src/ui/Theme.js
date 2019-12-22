@@ -10,4 +10,9 @@ export const Theme = {
     color: 'black',
     border: 'black',
   },
+  button: {
+    backgroundColor: 'black',
+    color: 'white',
+    border: 'black',
+  },
 }
