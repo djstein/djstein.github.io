@@ -26,7 +26,9 @@ export const PageHeader = ({ match, history }) => {
         </Link>
       )}
       <>
-        <Button onClick={() => switchTheme()}>{theme.theme}</Button>
+        <Button onClick={() => switchTheme()}>
+          {theme.theme === 'dark' ? 'light' : 'dark'}
+        </Button>
       </>
     </div>
   )

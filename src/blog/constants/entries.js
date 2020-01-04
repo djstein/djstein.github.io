@@ -1,4 +1,10 @@
 export const entries = {
+  'monthly-schedules': {
+    title: 'Monthly Schedules',
+    subtitle: 'Thoughts on a structured life',
+    publishDate: '1/04/2020',
+    featured: true,
+  },
   checklists: {
     title: 'Checklists',
     subtitle: 'Thoughts on a checklist app',
