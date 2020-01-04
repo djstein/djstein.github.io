@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.js": "/static/js/main.8c1a2664.chunk.js",
-    "main.js.map": "/static/js/main.8c1a2664.chunk.js.map",
+    "main.js": "/static/js/main.a56170d9.chunk.js",
+    "main.js.map": "/static/js/main.a56170d9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.74b0d50b.js",
     "runtime-main.js.map": "/static/js/runtime-main.74b0d50b.js.map",
     "static/js/2.26f53469.chunk.js": "/static/js/2.26f53469.chunk.js",
     "static/js/2.26f53469.chunk.js.map": "/static/js/2.26f53469.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.923508309d4374c399c014ecc14c8e26.js": "/precache-manifest.923508309d4374c399c014ecc14c8e26.js",
+    "precache-manifest.34f3662f8a9f570cad3bbec488cd552e.js": "/precache-manifest.34f3662f8a9f570cad3bbec488cd552e.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.26f53469.chunk.js.LICENSE": "/static/js/2.26f53469.chunk.js.LICENSE",
     "static/media/can-react-hooks-replace-redux.md": "/static/media/can-react-hooks-replace-redux.6e62333f.md",
     "static/media/checklists.md": "/static/media/checklists.71123552.md",
+    "static/media/monthly-schedules.md": "/static/media/monthly-schedules.33719031.md",
     "static/media/new-website.md": "/static/media/new-website.870670a1.md"
   },
   "entrypoints": [
     "static/js/runtime-main.74b0d50b.js",
     "static/js/2.26f53469.chunk.js",
-    "static/js/main.8c1a2664.chunk.js"
+    "static/js/main.a56170d9.chunk.js"
   ]
 }
