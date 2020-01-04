@@ -20,16 +20,29 @@ export const PageHeader = ({ match, history }) => {
       <Link to={'/'} fontSize={'1.5rem'} fontWeight={'500'}>
         Dylan Stein
       </Link>
-      {match.path !== '/' && (
-        <Link to={`/${basePath}/`} fontSize={'1.5rem'} fontWeight={'500'}>
-          {basePath[0].toUpperCase() + basePath.slice(1)}
-        </Link>
-      )}
-      <>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        {match.path !== '/' && (
+          <Link
+            to={`/${basePath}/`}
+            fontSize={'1.5rem'}
+            fontWeight={'500'}
+            style={{
+              marginRight: '1rem',
+            }}
+          >
+            {basePath[0].toUpperCase() + basePath.slice(1)}
+          </Link>
+        )}
         <Button onClick={() => switchTheme()}>
           {theme.theme === 'dark' ? 'light' : 'dark'}
         </Button>
-      </>
+      </div>
     </div>
   )
 }

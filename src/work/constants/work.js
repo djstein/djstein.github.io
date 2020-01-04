@@ -1,8 +1,15 @@
 export const work = [
   {
     company: 'Apple',
-    start: 'Nov 2018',
+    start: 'August 2019',
     end: 'Present',
+    website: 'https://www.apple.com',
+    summary: 'Senior Software Engineer',
+  },
+  {
+    company: 'Apple',
+    start: 'Nov 2018',
+    end: 'August 2019',
     website: 'https://www.apple.com',
     summary: 'Fullstack Web Developer',
   },

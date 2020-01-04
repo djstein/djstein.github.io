@@ -15,4 +15,5 @@ export const DarkTheme = {
     color: 'white',
     border: 'white',
   },
+  hover: '#bbbbbb',
 }

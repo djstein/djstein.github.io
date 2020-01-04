@@ -15,4 +15,5 @@ export const Theme = {
     color: 'white',
     border: 'black',
   },
+  hover: '#666666',
 }

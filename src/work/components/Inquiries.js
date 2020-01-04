@@ -59,7 +59,7 @@ Inquiry Form - dylanstein.dev%0D%0A${inquiryFormFields
             />
           </FieldSet>
         ))}
-        <Button type="submit">Submit</Button>
+        <Button type="submit">Send Email</Button>
         <Text style={{ fontSize: '1rem' }}>
           * Rates and licensing will be provided on a case by case basis,
           determined by project specifications.

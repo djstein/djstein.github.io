@@ -10,6 +10,10 @@ const StyledLink = styled.a`
   margin-top: 0;
   font-size: ${props => props.fontSize};
   font-weight: ${props => props.fontWeight || 'initial'};
+
+  :hover {
+    color: ${props => props.theme.hover};
+  }
 `
 
 const StyledRouterLink = styled(RouterLink)`
@@ -19,6 +23,10 @@ const StyledRouterLink = styled(RouterLink)`
   margin-top: 0;
   font-size: ${props => props.fontSize};
   font-weight: ${props => props.fontWeight || 'initial'};
+
+  :hover {
+    color: ${props => props.theme.hover};
+  }
 `
 
 export const Link = ({ to, children, ...rest }) =>

@@ -6,6 +6,8 @@ import { Text } from './../../ui/Text'
 export const HomePage = ({ match, history }) => (
   <>
     <PageHeader match={match} />
-    <Text style={{ paddingTop: '1rem' }}>Software engineer @ Apple, Inc.</Text>
+    <Text style={{ paddingTop: '1rem' }}>
+      Senior software engineer @ Apple, Inc.
+    </Text>
   </>
 )
