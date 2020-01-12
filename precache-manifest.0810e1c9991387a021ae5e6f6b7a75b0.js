@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5881c7ba3c8c0d539934b478b28a3dba",
+    "revision": "b50062c145ec924dbcc711206f3e34d5",
     "url": "/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.26f53469.chunk.js.LICENSE"
   },
   {
-    "revision": "2b645d7c7d4aca2b7a06",
-    "url": "/static/js/main.77cdc6bd.chunk.js"
+    "revision": "1f7c1859f4abe583bf9f",
+    "url": "/static/js/main.69ff44ec.chunk.js"
   },
   {
     "revision": "4867295ccdb0cadb2424",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7112355269bbe909c70dbce2dfa33c79",
     "url": "/static/media/checklists.71123552.md"
+  },
+  {
+    "revision": "27dc4162db5f80ca666fa997da7d1811",
+    "url": "/static/media/everything-everybody-needs.27dc4162.md"
   },
   {
     "revision": "33719031aab6bffc81336f5962538896",
