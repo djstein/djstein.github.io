@@ -1,4 +1,10 @@
 export const entries = {
+  'everything-everybody-needs': {
+    title: 'Everything Everybody Needs',
+    subtitle: 'A list things (almost) every web application needs',
+    publishDate: '1/12/2020',
+    featured: true,
+  },
   'monthly-schedules': {
     title: 'Monthly Schedules',
     subtitle: 'Thoughts on a structured life',
