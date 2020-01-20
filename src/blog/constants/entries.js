@@ -1,4 +1,10 @@
 export const entries = {
+  'after-senior-engineer': {
+    title: 'After Senior Engineer',
+    subtitle: 'A thought on what to do after being a "senior" engineer',
+    publishDate: '1/20/2020',
+    featured: true,
+  },
   'everything-everybody-needs': {
     title: 'Everything Everybody Needs',
     subtitle: 'A list things (almost) every web application needs',
